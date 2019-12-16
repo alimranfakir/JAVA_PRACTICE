@@ -1,0 +1,71 @@
+
+public class AnotherSimpleThread {
+	public static void main(String [] args)
+	{
+		C c = new C();
+		Thread t1 = new Thread(new A(c));
+		Thread t2 = new Thread(new B(c));
+		t1.start();
+		t2.start();
+		//System.out.println(c.getCount());
+	}
+}
+
+class A implements Runnable
+{
+	C c;
+	public A(C c)
+	{
+		this.c = c;
+	}
+	@Override
+	public void run()
+	{
+		
+		for (int i=0;i<50;i++) c.increment();
+		
+		//System.out.println(c.getCount());
+	
+	}
+}
+
+class B implements Runnable 
+{
+	C c;
+	public B(C c)
+	{
+		this.c = c;
+	}
+
+	@Override
+	public void run()
+	{
+			for (int i=0;i<20;i++) c.multiply();
+			//System.out.println(c.getCount());
+
+	}
+}
+
+class C
+{
+	private int count = 1;
+	public synchronized void increment()
+	{
+		count = count + 1;
+		System.out.println(count);
+	}
+	public synchronized void decrement()
+	{
+		count = count - 1;
+		System.out.println(count);
+	}
+	public synchronized void multiply()
+	{
+		count = count * 2;
+		System.out.println(count);
+	}
+	public int getCount()
+	{
+		return count;
+	}
+}
