@@ -1,0 +1,73 @@
+
+public class SimpleThreading {
+	public static void main (String [] args)
+	{
+		Thread one = new Thread(new A());
+		Thread two = new Thread(new B());
+		two.start();
+		one.start();
+		
+		try {
+		
+			one.join();
+			two.join();
+		}
+		catch (InterruptedException e)
+		{
+			;
+		}
+		
+		System.out.println(C.i);
+	}
+}
+
+class C
+{
+	public static int i=0;
+	public static synchronized void increment()
+	{
+		i = i + 1;
+		System.out.println(i);
+	}
+	
+	public static synchronized void decrement()
+	{
+		i = i - 1;
+		System.out.println(i);
+	}
+}
+
+class A implements Runnable
+{
+	@Override
+	public void run()
+	{
+		for (int i=0; i<10000000; i++)
+		{
+			C.increment();
+			
+		}
+		//System.out.println(C.i);
+	}
+}
+
+class B implements Runnable
+{
+	@Override
+	public void run()
+	{
+		try {
+			Thread.sleep(1000);
+		}
+		catch (InterruptedException e)
+		{
+			;
+		}
+		for (int i=0; i<1000; i++)
+		{
+			C.decrement();
+		}
+		
+		
+	}
+}
