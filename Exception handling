@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class ExceptionHierarchy {
+	public static void main(String [] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int i = sc.nextInt();
+		try {
+			excepter(i);
+		}
+		catch (C e)
+		{
+			System.out.println("Inside C");
+		}
+		/*catch (B e)
+		{
+			System.out.println("Inside B");
+		}*/
+		catch (A e)
+		{
+			System.out.println("Inside A");
+		}
+	}
+	
+	public static void excepter(int a) throws A/*, B*/, C
+	{
+		if (a==0)
+			throw new A();
+		else if (a==1)
+			throw new B();
+		else
+			throw new C();
+	}
+}
+
+
+class A extends Exception
+{
+	;
+}
+
+class B extends A
+{
+	;
+}
+
+class C extends B
+{
+	;
+}
