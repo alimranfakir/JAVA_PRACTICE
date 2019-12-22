@@ -1,0 +1,44 @@
+/*
+Thread is a class
+start()method is a part of Thread */
+
+public class Threadingbasics {
+  public static void main (String [] args) throws InterruptedException   //to suppresed the error
+  {     A a = new A();
+  Thread t1 = new  Thread(a);  //creating Thread and pass object a
+
+      t1.start();
+
+
+       for (int i =0; i<10; i++)
+       {
+           System.out.println(1);
+            Thread.sleep(500);
+       }
+  }
+}
+class A extends Threadingbasics  implements  Runnable {
+    @Override
+    public void run()
+    {
+        for (int i =0; i<10; i++)
+        {
+            System.out.println(2);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
