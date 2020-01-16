@@ -1,0 +1,21 @@
+
+   
+
+ public class Constructor{
+      int x;
+    
+    public Constructor()// Create a class constructor 
+    {
+       x=6;
+        
+    }
+    
+
+     public static void main(String []args){
+         
+         Constructor cons = new Constructor(); // Create an object of class MyClass (This will call the constructor)
+          System.out.println(cons.x);
+         
+        
+     }
+}
