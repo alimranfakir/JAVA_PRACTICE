@@ -1,0 +1,28 @@
+//if a class has multiple methods having same name but different in parameters, it is known as Method Overloading.
+//In java, method overloading is not possible by changing the return type of the method only because of ambiguity
+public class MethodOverloading {
+public static void main (String [] args)
+{
+	int presentScore =calculateScore("imran",200);
+	System.out.println("Your  score in English  is:"+presentScore);
+	calculateScore(30);
+	calculateScore();
+
+}
+public static int  calculateScore(String name , int score)
+{
+System.out.println(name+" " +"Your score in Math is: "+score);	
+return score *2;
+
+}
+public static void  calculateScore( int score)
+{
+System.out.println("hei your  score in Java is: "+score);	
+
+}
+public static void  calculateScore( )
+{
+	System.out.println("your excelent result");
+
+}
+}
