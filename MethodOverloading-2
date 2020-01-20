@@ -1,0 +1,46 @@
+//if a class has multiple methods having same name but different in parameters, it is known as Method Overloading.
+//In java, method overloading is not possible by changing the return type of the method only because of ambiguity
+//why we use methodoverloading??-> if there is more then one method and they are working for same we can easily use same method to remember the name
+//-> it improves code readability and re-usability 
+//=> achieves consistency in naming 
+
+public class MethodOverloading {
+public static void main (String [] args)
+{
+	calFeetandInchTocentemiter(1,0);  //call from main 
+	calFeetandInchTocentemiter(5);
+	calFeetandInchTocentemiter(5.6);
+
+}
+public static double calFeetandInchTocentemiter (int feet , int inch)   //<-1 Method
+{
+	if ((feet<0)||(inch <0))
+	{
+		System.out.println("Please type valid number!!!!!");
+		return -1;
+	}
+	
+	double Centimeter = (feet*12)*2.54;
+System.out.println(feet+"Feet"+inch+"Inch"+"="+Centimeter+"Centimeter");
+return Centimeter;	
+
+
+
+}
+public static double calFeetandInchTocentemiter ( int inch)         //<-2 Method
+{
+	double centimeter = (inch*2.54);
+	System.out.println(inch+"Inch"+" "+centimeter+"Centirmeter");
+	
+	return inch;
+	
+}
+public static double calFeetandInchTocentemiter ( double feet)     //<-3 Method
+{
+	double centimeter = (feet*30.48);
+	System.out.println(feet+"feet"+" "+centimeter+"Centirmeter");
+	
+	return feet;
+	
+}
+}
