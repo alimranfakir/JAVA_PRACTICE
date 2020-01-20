@@ -1,0 +1,53 @@
+  //two different type of switch statement 
+  public class Switch {
+	public static void main(String[] args) {
+		int choose = 1;
+		char charofstring = 'B';
+		charswitch(charofstring);
+		intswitch(choose);
+
+	}
+
+	public static void intswitch(int choose) {
+
+		switch (choose) {
+
+		case 1: {
+
+			System.out.println("Hi");
+			break;
+		}
+
+		case 2: {
+
+			System.out.println("hlw");
+			break;
+		}
+		default:
+			System.out.println(" not found please type 1-2");
+
+		}
+	}
+
+	public static void charswitch(char charofstring) {
+
+		switch (charofstring) {
+		case 'A': {
+			System.out.println("A");
+			break;
+		}
+		case 'B': {
+			System.out.println("B");
+			break;
+		}
+		case 'C': {
+			System.out.println("C");
+			break;
+		}
+		default:
+			System.out.println("plase type any alphabet between A-c");
+
+		}
+	}
+}
+
