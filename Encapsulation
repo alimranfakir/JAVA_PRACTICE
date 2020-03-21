@@ -1,0 +1,49 @@
+//Create a class UserDetails, two private fields name and Email and pass. Also create public getter and setter methods.
+public class Userdetails {
+    private String name ;
+    private String email;
+    private String pass;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+}
+ Step 2 :Create a new class User. Here create a object for UserDetails in main method. On object call method setName() and setEmail() ans setPass() 
+ to write values and then call method getName() and getEmail() to read values.
+ 
+ 
+
+public class User {
+    public  static void main (String args [])
+    {
+       Userdetails userdetails = new Userdetails();
+
+       userdetails.setEmail("mdacr7@gmail.com");
+       userdetails.setName("Imran");
+       userdetails.setPass("12emran@");
+
+        System.out.println("Name:"+ " "+userdetails.getName()+"Email:"+ " "+userdetails.getEmail()+"Pass:"+ " "+userdetails.getPass());
+
+    }
+}
+
